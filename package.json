@@ -1,0 +1,54 @@
+{
+  "name": "@use-shared-state/client",
+  "version": "0.1.0",
+  "description": "uss client",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d . --copy-files --quiet",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.8.4",
+    "@babel/core": "7.9.0",
+    "@babel/node": "7.8.7",
+    "@babel/plugin-proposal-class-properties": "7.8.3",
+    "@babel/plugin-transform-regenerator": "7.8.7",
+    "@babel/plugin-transform-runtime": "7.9.0",
+    "@babel/preset-env": "7.9.5",
+    "husky": "4.2.5",
+    "jest": "25.4.0",
+    "node-fetch": "2.6.0",
+    "prettier": "2.0.5",
+    "pretty-quick": "2.0.1"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-transform-regenerator",
+      "@babel/plugin-transform-runtime"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && npm run build && git add ./api.js && git add ./index.js && git add ./state.js"
+    }
+  },
+  "author": "Dmitry Balakov",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/use-shared-state/uss-client.git"
+  },
+  "keywords": [
+    "uss",
+    "shared-state",
+    "client"
+  ],
+  "bugs": {
+    "url": "https://github.com/use-shared-state/uss-client/issues"
+  },
+  "homepage": "https://github.com/use-shared-state/uss-client#readme"
+}
